@@ -29,7 +29,7 @@
     
     self.view.backgroundColor = [UIColor colorWithRed:0.60f green:0.60f blue:0.60f alpha:1.0f];
     
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+//    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     
     // 创建二维码的视图
     [self p_setupQRCodeContainerView];
@@ -45,7 +45,7 @@
     containerView.layer.cornerRadius = 10;
     containerView.layer.masksToBounds = YES;
     containerView.backgroundColor = [UIColor whiteColor];
-    containerView.frame = CGRectMake(30, 120, TCTScreenWidth - 60, 400);
+    containerView.frame = CGRectMake(30, 80, TCTScreenWidth - 60, 400);
     [self.view addSubview:containerView];
     
     // 二维码的显示区
@@ -98,19 +98,19 @@
     functionView.backgroundColor = [UIColor whiteColor];
     functionView.layer.cornerRadius = 10;
     functionView.layer.masksToBounds = YES;
-    functionView.frame = CGRectMake(30, 540,  TCTScreenWidth - 60, 60);
+    functionView.frame = CGRectMake(30, 500,  TCTScreenWidth - 60, 55);
     [self.view addSubview:functionView];
     _functionView = functionView;
     
     UIButton *generateButton = [self buttonWithTitle:@"generate"];
     [generateButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    generateButton.frame = CGRectMake(20, 10, 120, 40);
+    generateButton.frame = CGRectMake(10, 10, (functionView.bounds.size.width - 40) / 2, 35);
     [generateButton addTarget:self action:@selector(p_generateQRCode) forControlEvents:UIControlEventTouchUpInside];
     [functionView addSubview:generateButton];
     
     UIButton *scanButton = [self buttonWithTitle:@"scan"];
     [scanButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    scanButton.frame = CGRectMake(CGRectGetMaxX(generateButton.frame)+ 30, 10, 120, 40);
+    scanButton.frame = CGRectMake(CGRectGetMaxX(generateButton.frame)+ 20, 10, (functionView.bounds.size.width - 40) / 2, 35);
     [scanButton addTarget:self action:@selector(p_scanQRCodeViewController) forControlEvents:UIControlEventTouchUpInside];
     [functionView addSubview:scanButton];
 }

@@ -34,7 +34,7 @@
 #pragma mark - private method
 - (void)p_setupNavigationBar {
     self.title = @"扫一扫";
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+//    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.navigationController.navigationBar.tintColor = [UIColor orangeColor];
     UIBarButtonItem *photoButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"相册" style:UIBarButtonItemStylePlain target:self action:@selector(p_obtainQRCodeFromPhoto)];
 
